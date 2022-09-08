@@ -8,3 +8,4 @@ Formulario responsive de logueo hecho con Bootstrap. Auth con firebase
 #
 [![Run on Repl.it](https://repl.it/badge/github/freeCodeCamp/boilerplate-npm)](https://tp1-optativo.facumruiz.repl.co)
 
+![formfirebaseerror](https://user-images.githubusercontent.com/80124560/189153527-2ac0c48f-d7eb-4817-b8a7-f34b7dd2f08c.PNG)
