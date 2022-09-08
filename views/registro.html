@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="public/style.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- LIBRERIAS SDK PARA FIREBASE
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <!--Llamo libreria de firebase para poder hacer autenticacion de usuarios-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+
+
+
+    <!-- Enlazo Base de datos(FireBase) en index.html)-->
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCQCL2N7SmEltWLqyF4vY9ah8svngqbx64",
+            authDomain: "portfolio-38c55.firebaseapp.com",
+            projectId: "portfolio-38c55",
+            storageBucket: "portfolio-38c55.appspot.com",
+            messagingSenderId: "57254045557",
+            appId: "1:57254045557:web:8e90288dc336004a10953c",
+            measurementId: "G-T0T5WNMPSS"
+
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        auth = firebase.auth()
+
+    </script>
+
+    <title>FORM</title>
+</head>
+
+<body style="background-color: #0d0f13">
+
+    <div class="card container mt-5 mb-5" style="width: 40rem; background-color: #2d3036;">
+        <form id="user-form" class="container mt-4" method="post">
+
+            <div class="input-group w-100 mt-2">
+                <span class="input-group-text" id="mail1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                    </svg>
+                </span>
+                <input  type="text" class="form-control" placeholder="Input your name"
+                    aria-label="Input group example" aria-describedby="basic-addon1" required>
+                <input  type="text" class="form-control" placeholder="Input your surname"
+                    aria-label="Input group example" aria-describedby="basic-addon1" required>
+            </div>
+            <div class="input-group w-100 mt-2">
+                <span class="input-group-text" id="mail1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                    </svg>
+                    </svg>
+                </span>
+                <input id="uMail" type="text" class="form-control" placeholder="Input your email"
+                    aria-label="Input group example" aria-describedby="basic-addon1">
+
+            </div>
+
+
+
+            <div class="input-group w-100 mt-2">
+                <span class="input-group-text" id="basic-addon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-envelope-check-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 4.697v4.974A4.491 4.491 0 0 0 12.5 8a4.49 4.49 0 0 0-1.965.45l-.338-.207L16 4.697Z" />
+                        <path
+                            d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z" />
+                    </svg>
+                    </svg>
+                </span>
+                <input id="cMail" type="text" class="form-control" placeholder="Confirm your email"
+                    aria-label="Input group example" aria-describedby="basic-addon1">
+            </div>
+
+            <!-- INNER HTML -->
+            <div id="txtfe">.</div>
+
+            <div class="input-group w-100 mt-2">
+                <span class="input-group-text" id="basic-addon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+
+                </span>
+                <input id="upass" type="password" class="form-control" placeholder="Input your password"
+                    aria-label="Input group example" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group w-100 mt-2">
+                <span class="input-group-text" id="basic-addon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+
+                </span>
+                <input id="cupass" type="password" class="form-control" placeholder="Confirm your password"
+                    aria-label="Input group example" aria-describedby="basic-addon1">
+            </div>
+
+            <!-- INNER HTML -->
+            <div id="txtfp">.</div>
+            <!-- INNER HTML -->
+            <div id="txte"><div class=""></div></div>
+            <div class="g-recaptcha mt-4" data-theme='dark' data-sitekey="6LdFCZogAAAAAJ1FyUFOOXmKn6JNEDfE7ie29NGH"
+                data-callback="recaptcha_callback">
+
+            </div>
+            <div id="g-recaptcha-error"></div>
+
+            <div class="form-group row boton-registro">
+                <div class="col-sm-12">
+
+                </div>
+
+
+
+                <!-- BOTON GOOGLE -->
+                <!--
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-secondary mb-2 mt-2 btn-lg btn-block"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-google">
+                            <path
+                                d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                        </svg> Registrarse con Google </button>
+                </div>
+                -->
+                <div class="col-sm-12">
+                    <button type="submit" value="Submit" class="btn btn-secondary mb-2 mt-2 btn-lg btn-block">
+                        Registrarse </button>
+                </div>
+            </div>
+        </form>
+        <!-- MODAL EXITO -->
+        <div id="modalexito" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="background-color: #2D3036">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: white">Usuario registrado con exito</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color: white">Ya puedes usar tu cuenta.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARTE DE BACKEND -->
+            <script>
+                const userForm = document.getElementById("user-form");
+                userForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    const userMail = document.getElementById("uMail").value;
+                    const userCMail = document.getElementById("cMail").value;
+                    const userPass = document.getElementById("upass").value;
+                    const userCPass = document.getElementById("cupass").value;
+                    console.log(userCMail, userMail)
+                    txte = document.getElementById("txte");
+                    txtfe = document.getElementById("txtfe");
+                    txtfp = document.getElementById("txtfp");
+
+                    if (userMail != userCMail) {
+                        //console.log("ERROR LOS MAILS NO COINCIDEN")
+                        txtfe.innerHTML = `<p style="color:red;">The emails do not match</p>`
+
+                    }
+                    if (userMail == userCMail) {
+                        //console.log("ERROR LOS MAILS NO COINCIDEN")
+                        txtfe.innerHTML = `<p style="color:green;">The emails do match</p>`
+
+                    }
+
+                    // authenticacion con firebase
+                    firebase.auth().createUserWithEmailAndPassword(userCMail, userCPass)
+                        .then(userCredential => {
+                            $("#modalexito").modal("show");
+                        })
+                        .catch((error) => {
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            console.log(errorMessage);
+                            //window.alert(errorMessage);
+                            txte.innerHTML = `<p style="color:red;">${errorMessage}</p>`
+
+                            // ..
+                        });
+
+                });
+
+            </script>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>
